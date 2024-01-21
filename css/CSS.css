@@ -1,0 +1,259 @@
+body {
+    background-color:#FBFCF2;
+    color: #4C3D3A;
+    font-family: 'Zen Maru Gothic', serif;
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+.radius {
+  border-radius: 72px;
+}
+
+.radius2 {
+  border-radius: 20px;
+}
+
+.title img{
+  min-width: 200px;
+}
+
+article{
+  margin-top: 20px;
+  margin-bottom:60px;
+  text-align: center;
+}
+
+.campaignpic Img{
+  min-width: 350px;
+}
+
+
+.back_yellow {
+  background-color: #FFF8DD;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.concept_img_and_txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.8em;
+  margin-bottom: 30px;
+}
+
+small {
+  font-size: 0.6em;
+}
+
+.concept_txt {
+  text-align: left;
+  width: 50%;
+  line-height: 1.6em;
+}
+
+.concept_img {
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+footer {
+  padding-top: 30px;
+  text-align: center;
+  background-color:  #FFF8DD;
+}
+
+#sns svg {
+  fill: #4C3D3A;
+  width: 40px;
+  margin: auto 5px;
+}
+
+#sns svg:hover {
+  fill: #bba6a2;
+}
+
+/*== ボタン共通設定 */
+.btn{
+  /*アニメーションの起点とするためrelativeを指定*/
+  position: relative;
+overflow: hidden;
+  /*ボタンの形状*/
+text-decoration: none;
+display: inline-block;
+   border: 3px solid #4C3D3A;/* ボーダーの色と太さ */
+   border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  outline: none;
+  font-family: 'Zen Maru Gothic', serif;
+    font-size: 1.1em;
+    font-weight: 400;
+  /*アニメーションの指定*/   
+  transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+position: relative;
+z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+color:#4C3D3A;
+border-radius: 10px;
+}
+
+.btn:hover span{
+color:#fff;
+}
+
+
+
+
+/*== 背景が流れる（左から右） */
+.bgleft:before {
+ content: '';
+  /*絶対配置で位置を指定*/
+ position: absolute;
+ top: 0;
+ left: 0;
+ z-index: 2;
+  /*色や形状*/
+ background:#4C3D3A;/*背景色*/
+ width: 100%;
+height: 100%;
+  /*アニメーション*/
+ transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+ transform: scale(0, 1);
+transform-origin: right top;
+}
+
+/*hoverした際の形状*/
+.bgleft:hover:before{
+transform-origin:left top;
+transform:scale(1, 1);
+}
+
+
+
+.mainvisual {
+    height: 100%;
+    z-index: -5;
+}
+
+.txt_anime {
+    overflow: hidden;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin-inline: auto;
+    z-index: -10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #4C3D3A;
+    -webkit-text-fill-color: #FBFCF2; /* （順序に関係なく）色を上書きする　　IE用　*/
+    -webkit-text-stroke: 3px #4C3D3A;
+    font-size: 150px;
+
+}
+
+.loop {
+  animation: loop 30s linear infinite;
+  width: 100%;
+}
+
+.loop2{
+  position: absolute;
+  top: 0; left: 0;
+  animation: loop 30s -10s linear infinite;
+}
+
+.loop3{
+    position: absolute;
+    top: 0; left: 0;
+    animation: loop 30s -20s linear infinite;
+  }
+
+@keyframes loop {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+
+
+/*　画像の拡大　*/
+
+.zoomIn img{
+	transform: scale(1);
+	transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.zoomIn a:hover img{/*hoverした時の変化*/
+	transform: scale(1.1);/*拡大の値を変更したい場合はこの数値を変更*/
+}
+
+/*　画像のマスク　*/
+
+.mask{
+    display: block;
+    line-height: 0;/*行の高さを0にする*/
+    overflow: hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+
+/*レスポンシブデザイン*/
+@media screen and (max-width:800px){
+
+    .onlypc  {
+      display: none;  
+    }
+
+.concept_txt {
+  width: 70%;
+}
+
+.concept_img_and_txt br{
+  display: none;
+}
+
+    .radius{
+      border-radius: 10px;
+    }
+
+    .radius2{
+      border-radius: 5px;
+    }
+
+    .loop {
+        animation: loop 15s linear infinite;
+        width: 100%;
+      }
+
+      @keyframes loop {
+        0%{
+          transform: translateX(100%);
+        }
+        100%{
+          transform: translateX(-180%);
+        }
+      }
+
+      .mainvisual {
+        height: 600px;
+        z-index: -5;
+    }
+
+  }

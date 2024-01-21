@@ -1,0 +1,66 @@
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+    width:80%;
+     margin:0 auto;
+ }
+ 
+ .slider img {
+     width:70%;
+     margin: 0 auto;
+     height:auto;
+ }
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+ .slider .slick-slide {
+     margin:0 10px;
+ }
+
+ /*ドットナビゲーションの設定*/
+ 
+ .slick-dots {
+     text-align:center;
+     margin:20px 0 0 0;
+ }
+ 
+ .slick-dots li {
+     display:inline-block;
+     margin:0 10px;
+ }
+ 
+ .slick-dots button {
+     color: transparent;
+     outline: none;
+     width:22px;/*ドットボタンのサイズ*/
+     height:22px;/*ドットボタンのサイズ*/
+     display:block;
+     border-radius:50%;
+     background:#bba6a2;/*ドットボタンの色*/
+ }
+ 
+ .slick-dots .slick-active button{
+     background: #4C3D3A;/*ドットボタンの現在地表示の色*/
+ }
+
+
+ @media screen and (max-width:800px){
+    .slider_pc{
+        display: none;
+    }
+
+    .slider {
+        width: 90%;
+    }
+
+    .slider_sp Img{
+        width: 100%;
+    }
+ }
+
+ @media screen and (min-width:801px){
+    .slider_sp{
+        display: none;
+    }
+ }
